@@ -1,15 +1,27 @@
 {
-  "name": "disboard",
-  "version": "0.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "Tet",
+  "version": "0.0.2",
+  "description": "Bot general de 『 Disboard 』",
+  "main": "node server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "discord.js": "^11.4.2",
-    "node.js": "0.0.0"
-  }
+    "http": "^0.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/Qu4k3/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
