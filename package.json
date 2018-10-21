@@ -1,6 +1,6 @@
 {
   "name": "Tet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bot general de 『 Disboard 』",
   "main": "node server.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "discord.js": "^11.3.2",
+    "discord.js": "^11.4.2",
     "http": "^0.0.0"
   },
   "engines": {
