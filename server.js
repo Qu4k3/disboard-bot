@@ -65,7 +65,7 @@ client.on('message', async message => {
     message.channel.send({
       embed: {
         color: config.color,
-        description: "- Tag: **『 』**\n\n- Generador: [https://hlorenzi.github.io/mk8d_ocr/table.html](https://hlorenzi.github.io/mk8d_ocr/table.html)\n\n_Ejemplo:_",
+        description: "- Tag: **『 』**\n- Generador: [https://hlorenzi.github.io/mk8d_ocr/table.html](https://hlorenzi.github.io/mk8d_ocr/table.html)\n_Ejemplo:_",
         "image": {
           "url": "https://cdn.discordapp.com/attachments/487343815615578124/503632252807413762/Screen_Shot_2018-10-21_at_1.14.33_PM.png"
         }
@@ -191,26 +191,21 @@ client.on('message', async message => {
       }
     });
   } else if (command === "info" && args.length == 1) {
-    if (!(args[0])) {
-      message.channel.send({
-      embed: {
-        color: config.color,
-        description: "**Tet no reconoce este formato**.\nTal vez quisistes usar `+info @[nombre-usuario]`."
-      }
-    });
-    } else {
+    let usuario = message.mentions.members.first();
+    
+    if (usuario) {
       let joinedTimestamp = message.guild.joinedTimestamp;
       let date = new Date(joinedTimestamp);
-
+//date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear().toString().substr(2, 2)
       message.channel.send({
         embed: {
           color: config.color,
-          description: "Miembro desde: " + date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear().toString().substr(2, 2) + "\n\n_Próximamente: estadísticas del jugador_",
+          description: "Miembro desde: _pendiente_\n\n_Próximamente: estadísticas del jugador_",
           "thumbnail": {
-            "url": message.author.avatarURL
+            "url": usuario.avatarURL
           },
           "author": {
-            "name": message.author.username
+            "name": usuario.username
           },
           "fields": [{
               "name": "Wars jugadas",
@@ -273,7 +268,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)"
+            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor.\n\n¡Esperamos te sientas a gusto!"
           }
         });
         message.channel.send({
@@ -286,7 +281,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)\n\nTras jugar algunas wars junto al equipo, los representantes pasarán a ponerte rol de miembro de clan."
+            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)\n\nTras jugar algunas wars junto al equipo, los representantes pasarán a ponerte rol de miembro de clan.\n\n¡Esperamos te sientas a gusto!"
           }
         });
         message.channel.send({
@@ -299,7 +294,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nPásatelo bien y sobretodo, respeta las reglas y la forma de ser de este clan :)"
+            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\n¡Esperamos te sientas a gusto! Pásatelo bien y sobretodo, respeta las reglas y la forma de ser de este clan."
           }
         });
         message.channel.send({
@@ -324,11 +319,36 @@ client.on('message', async message => {
        }   
     }
     
-  } else if (command === "help" && args.length <= 0) {
+  } else if (command === "snl" && args.length <= 0) {
+    
+    let miembros = ["Aid3n", "Alozy", "eletrn02", "Javier", "kelin", "LaPulgaXD", "Little", "Quake", "Roger", "STpile", "Caizer", "YiYo"]
+    
+    let lista = "";
+    
+    for (let index = 0; index < miembros.length; ++index) {
+        lista += miembros[index] + "\n"
+    }
+    
+    message.channel.send({
+      embed: {
+        color: config.color,        
+        "fields": [{
+              "name": "Registrados",
+              "value": miembros.length
+            },
+           {
+              "name": "Pueden jugar",
+              "value": lista
+            }
+          ]
+      }
+    });
+  } 
+  else if (command === "help" && args.length <= 0) {
     message.channel.send({
       embed: {
         color: config.color,
-        description: "Bot de ayuda general\n\n**+tag** -> Referencias al clan\n**+tabla** -> Información para hacer correctamente las tablas\n**+info** -> Información del jugador\n**+wars** -> Informe de wars\n**+disboard** -> Datos del clan\n**+invi** -> Enlace de invitación\n**+r** -> Gifs random de NGNL\n**+help** -> Lista de comandos disponibles"
+        description: "**+tag** --------------> Referencias al clan\n**+tabla** ------------> Información para hacer correctamente las tablas\n**+info** -------------> Información del jugador\n**+info @usuario** -> Información del jugador\n**+wars** ------------> Informe de wars\n**+disboard** -------> Datos del clan\n**+snl** --------------> Miembros registrados para la SNL\n**+invi** -------------> Enlace de invitación\n**+r** ----------------> Gifs random de NGNL\n**+help** ------------> Lista de comandos disponibles"
       }
     });
   } else if (command === "invi" && args.length <= 0) {
