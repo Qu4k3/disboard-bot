@@ -172,7 +172,6 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==
-      tarball: 'http://registry.npmjs.org/finalhandler/-/finalhandler-1.1.1.tgz'
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -196,7 +195,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=
-      tarball: 'http://registry.npmjs.org/http-errors/-/http-errors-1.6.3.tgz'
   /http/0.0.0:
     dev: false
     resolution:
@@ -420,7 +418,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZGh/8kF9rrRNffkLFV4AzhvooEclrOH0xaugmqGsIfFgOE/pIz4fMc4Ef+5HSQqTEug2S9JZIWDR47duDSLfaA==
-      tarball: 'http://registry.npmjs.org/ws/-/ws-4.1.0.tgz'
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
