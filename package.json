@@ -1,6 +1,6 @@
 {
   "name": "Tet",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Bot general de 『 Disboard 』",
   "main": "node server.js",
   "scripts": {
