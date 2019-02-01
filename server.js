@@ -87,26 +87,40 @@ client.on('message', async message => {
     }).map(member => {
       return member.user.username;
     })
+    let lunamana = message.guild.members.filter(member => {
+      return member.roles.find("name", "Lunamana");
+    }).map(member => {
+      return member.user.username;
+    })
     message.channel.send({
       embed: {
         "color": config.color,
         "fields": [{
-            "name": "**Listado de miembros**",
+            "name": "**Jugadores de Mario Kart**",
             "value": ":busts_in_silhouette: - " + (imanity.length + seirens.length + werebeast.length),
           },
           {
             "name": "Miembros - " + imanity.length,
-            "value": imanity.join("\n"),
+            "value": imanity.join("\n")+"\n-",
             "inline": true
           },
           {
             "name": "Trials - " + seirens.length,
-            "value": seirens.join("\n"),
+            "value": seirens.join("\n")+"\n-",
             "inline": true
           },
           {
             "name": "Allys - " + werebeast.length,
-            "value": werebeast.join("\n"),
+            "value": werebeast.join("\n")+"\n-",
+            "inline": true
+          },
+          {
+            "name": "**Jugadores de Smash**",
+            "value": ":busts_in_silhouette: - " + (lunamana.length),
+          },
+          {
+            "name": "Miembros - " + lunamana.length,
+            "value": lunamana.join("\n")+"\n-",
             "inline": true
           },
           {
@@ -268,7 +282,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nSi quieres, puedes presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor.\n\n¡Esperamos que te sientas a gusto!"
+            description: "¡Bienvenid@ al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nSi quieres, puedes presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor.\n\n¡Esperamos que te sientas a gusto!"
           }
         });
         message.channel.send({
@@ -281,7 +295,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nSi quieres, puedes presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)\n\nTras jugar algunas wars junto al equipo, los representantes pasarán a ponerte rol de miembro de clan.\n\n¡Esperamos que te sientas a gusto!"
+            description: "¡Bienvenid@ al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nSi quieres, puedes presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)\n\nTras jugar algunas wars junto al equipo, los representantes pasarán a ponerte rol de miembro de clan.\n\n¡Esperamos que te sientas a gusto!"
           }
         });
         message.channel.send({
@@ -294,7 +308,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\n¡Esperamos que te sientas a gusto! Pásatelo bien y sobretodo, respeta las reglas y la forma de ser de este clan."
+            description: "¡Bienvenid@ al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\n¡Esperamos que te sientas a gusto! Pásatelo bien y sobretodo, respeta las reglas y la forma de ser de este clan."
           }
         });
         message.channel.send({
@@ -307,7 +321,7 @@ client.on('message', async message => {
          message.channel.send({
           embed: {
             color: config.color,
-            description: "¡Bienvenido al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)"
+            description: "¡Bienvenid@ al clan de **Disboard** " + usuario + "!\n\nPor favor, tómate tu tiempo para leerte los <#487350168853676053> (normas) e <#488091660115247105> para entender un poco mejor el servidor.\n\nNo olvides presentarte en <#487380356874633217> para que te conozcamos todos un poco mejor :)"
           }
         });
         message.channel.send({
@@ -352,12 +366,7 @@ client.on('message', async message => {
       }
     });
   } else if (command === "invi" && args.length <= 0) {
-    message.channel.send({
-      embed: {
-        color: config.color,
-        description: "Invitación al servidor:\n\nhttps://discord.gg/YmFtq7m"
-      }
-    });
+    message.channel.send("https://discord.gg/YmFtq7m");
   } else {
     /*message.channel.send({
       embed: {
@@ -369,7 +378,5 @@ client.on('message', async message => {
 
 });
 
-
-// Si +aschente werebeast o si +aschente immanity, ver k roles tiene, segun uno u otro, mostrar un mensaje u otro
 
 client.login(process.env.TOKEN);
