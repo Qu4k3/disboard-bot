@@ -2,30 +2,6 @@
 const http = require('http');
 const express = require('express');
 const app = express();
-const MongoClient = require('mongodb').MongoClient;
-//const assert = require('assert');
-
-var db_user = process.env.DB_USER;
-var db_pass = process.env.DB_PASS;
-var db_cluster = process.env.DB_CLUSTER;
-var db_name = process.env.DB_NAME;
-
-// Connection URL
-const url = 'mongodb+srv://'+db_user+':'+db_pass+'@'+db_cluster+'/'+db_name;
-
-// Create a new MongoClient
-const mongoClient = new MongoClient(url, { useNewUrlParser: true });
-
-// Use connect method to connect to the Server
-mongoClient.connect(function(err) {
-  //assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  /*const db = mongoClient.db(dbName);*/
-
-  mongoClient.close();
-});
-
 
 app.use(express.static('public'));
 
