@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "discord.js": "^11.4.2",
-    "http": "^0.0.0"
+    "http": "^0.0.0",
+    "mongodb": "3.1.13"
   },
   "engines": {
     "node": "8.x"
