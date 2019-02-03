@@ -46,10 +46,16 @@ img {
 }
 
 .badge > span:before {
-  content: '\2022';
+  content: "\2022";
   position: absolute;
-  color: #4BB543;
-  top: -4px;
+  color: #4bb543;
+  top: -5px;
   left: -14px;
   font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .badge > span:before {
+      top: -4px;
+  }
 }
