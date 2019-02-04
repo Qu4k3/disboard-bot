@@ -3,6 +3,17 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
+function checkHttps(req, res, next){
+  // protocol check, if http, redirect to https  
+  if(req.get('X-Forwarded-Proto').indexOf("https")!=-1){
+    return next()
+  } else {
+    res.redirect('https://' + req.hostname + req.url);
+  }
+}
+
+app.all('*', checkHttps);
+
 app.use(express.static('public'));
 
 app.get("/", function (request, response) {
@@ -18,7 +29,7 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
-// http://disboard-tet.glitch.me
+// http://disboard-bot.glitch.me
 
 // BOT
 const Discord = require('discord.js');
