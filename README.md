@@ -16,4 +16,4 @@ Discord bot built for team management and helpful info commands.
 
 ## Check status
 
-[http://disboard-tet.glitch.me](http://disboard-tet.glitch.me)
+[http://disboard-bot.glitch.me](http://disboard-bot.glitch.me)

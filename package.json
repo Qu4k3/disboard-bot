@@ -1,6 +1,6 @@
 {
   "name": "Tet",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Bot general de 『 Disboard 』",
   "main": "node server.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://github.com/Qu4k3/"
+    "url": "https://github.com/Qu4k3/disboard-bot"
   },
   "license": "MIT",
   "keywords": [

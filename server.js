@@ -3,6 +3,17 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
+function checkHttps(req, res, next){
+  // protocol check, if http, redirect to https  
+  if(req.get('X-Forwarded-Proto').indexOf("https")!=-1){
+    return next()
+  } else {
+    res.redirect('https://' + req.hostname + req.url);
+  }
+}
+
+app.all('*', checkHttps);
+
 app.use(express.static('public'));
 
 app.get("/", function (request, response) {
@@ -18,7 +29,7 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
-// http://disboard-tet.glitch.me
+// http://disboard-bot.glitch.me
 
 // BOT
 const Discord = require('discord.js');
@@ -210,7 +221,7 @@ client.on('message', async message => {
     if (usuario) {
       let joinedTimestamp = message.guild.joinedTimestamp;
       let date = new Date(joinedTimestamp);
-//date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear().toString().substr(2, 2)
+      //date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear().toString().substr(2, 2)
       message.channel.send({
         embed: {
           color: config.color,
@@ -362,7 +373,7 @@ client.on('message', async message => {
     message.channel.send({
       embed: {
         color: config.color,
-        description: "**+tag** --------------> Referencias al clan\n**+tabla** ------------> Información para hacer correctamente las tablas\n**+info** -------------> Información del jugador\n**+info @usuario** -> Información del jugador\n**+wars** ------------> Informe de wars\n**+disboard** -------> Datos del clan\n**+snl** --------------> Miembros registrados para la SNL\n**+invi** -------------> Enlace de invitación\n**+r** ----------------> Gifs random de NGNL\n**+help** ------------> Lista de comandos disponibles"
+        description: "**+tag** --------------> Referencias al clan\n**+tabla** ------------> Información para hacer correctamente las tablas\n**+info** -------------> Información del jugador\n**+info @usuario** -> Información del jugador\n**+wars** ------------> Informe de wars\n**+disboard** -------> Datos del clan\n**+invi** -------------> Enlace de invitación\n**+r** ----------------> Gifs random de NGNL\n**+help** ------------> Lista de comandos disponibles"
       }
     });
   } else if (command === "invi" && args.length <= 0) {

@@ -5,7 +5,6 @@
     "^\\.env$"
   ]
 },
-
 "restart": {
   "exclude": [
     "^public/",
@@ -17,5 +16,5 @@
     "\\.json"
   ]
 },
-"throttle": 90000
+"throttle": 900000
 }        
