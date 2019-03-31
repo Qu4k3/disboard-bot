@@ -124,7 +124,7 @@ client.on('message', async message => {
             "name": "Allys - " + werebeast.length,
             "value": werebeast.join("\n")+"\n-",
             "inline": true
-          },
+          }/*,
           {
             "name": "**Jugadores de Smash**",
             "value": ":busts_in_silhouette: - " + (lunamana.length),
@@ -133,7 +133,7 @@ client.on('message', async message => {
             "name": "Miembros - " + lunamana.length,
             "value": lunamana.join("\n")+"\n-",
             "inline": true
-          },
+          }*/,
           {
             "name": "\n**Enlaces**",
             "value": ":link:",
