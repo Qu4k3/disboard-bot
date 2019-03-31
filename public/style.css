@@ -36,9 +36,10 @@ img {
 
 .badge {
   padding: 6px 12px 6px 24px;
-  background-color: rgba(255,255,255,.15);
+  /*background-color: rgba(255,255,255,.15);*/
+  border: 1.5px solid #ff1865;
   display: inline-block;
-  border-radius: 15px;
+  border-radius: 25px;
 }
 
 .badge > span {

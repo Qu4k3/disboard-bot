@@ -19,3 +19,7 @@ Discord bot built for team management, quick info checking and some other helpfu
 - Express
 - Discordjs - [site](https://discord.js.org)
 - Discord webhooks
+
+## Check status
+
+[https://bot.disboard.team](https://bot.disboard.team)
