@@ -19,3 +19,10 @@ Discord bot built for team management, quick info checking and some other helpfu
 - Express
 - Discordjs - [site](https://discord.js.org)
 - Discord webhooks
+
+## Config
+
+**.env**
+```shell
+TOKEN= // discord bot token
+```
