@@ -1,6 +1,7 @@
 const http = require('http');
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 function checkHttps(req, res, next){
   // protocol check, if http, redirect to https  
