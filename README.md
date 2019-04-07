@@ -9,7 +9,7 @@
     <img width="250" height="300" src="https://cdn.discordapp.com/attachments/503303753705848838/541225512459042818/tet_github.png">
 </p>
 
-## About
+# Disboard Bot
 
 Discord bot built for team management, quick info checking and some other helpful available commands.
 
