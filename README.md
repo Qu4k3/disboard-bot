@@ -23,6 +23,7 @@ Discord bot built for team management, quick info checking and some other helpfu
 ## Config
 
 **.env**
+
 ```shell
 TOKEN= // discord bot token
 ```
